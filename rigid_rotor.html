@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!-- IE8+に対して「IE=edge」と指定することで、利用できる最も互換性の高い最新のエンジンを使用するよう指示できます
+     参考: https://www.modern.ie/en-us/performance/how-to-use-x-ua-compatible -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+ 
+<!-- ページのタイトルを記述 -->
+<title></title>
+ 
+<!-- パフォーマンスのために使用する文字のエンコーディングを記述
+     参考: https://developers.google.com/speed/docs/best-practices/rendering#SpecifyCharsetEarly -->
+<meta charset="utf-8">
+ 
+<!-- content属性にページの紹介文を記述 -->
+<meta name="description" content="">
+ 
+<!-- content属性にページの著者情報を記述 -->
+<meta name="author" content="">
+ 
+<!-- モバイル端末への対応、ページをビューポートの幅に合わせてレンダリング（Android, iOS6以降）
+     ズームを許可しない設定「user-scalable=no」は加えない -->
+<meta name="viewport" content="width=device-width, initial-scale=1">
+ 
+<!-- スタイルシートはできるだけ早くレンダリングされるため、HTMLドキュメントの上の方に記述
+     href属性にスタイルシートファイルのURIを記述 -->
+<!-- <link rel="stylesheet" href=""> -->
+ 
+<!-- IE8以下用に2つのスクリプトを記述
+     html5shiv.js: IE8以下にHTML5の要素を認識するようにさせる
+     respond.js: IE8以下にMedia Queriesの代替え機能を提供 -->
+<!--[if lt IE 9]>
+<script src="//cdn.jsdelivr.net/html5shiv/3.7.2/html5shiv.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
+ 
+<!-- href属性にファビコンファイルのURIを記述 -->
+<!-- <link rel="shortcut icon" href=""> -->
+ 
+<!-- コメントアウトしてあるコードは、iOS/Android用のアイコン指定 -->
+<!--
+<meta name="mobile-web-app-capable" content="yes">
+<link rel="icon" sizes="196x196" href="">
+<link rel="apple-touch-icon" sizes="152x152" href="">
+-->
+ 
+<!-- スクリプトでブロッキングを起こさないものはここに記述
+     可能であれば「async（文書の読み込みが完了した時点でスクリプトを実行）」を使用
+     Example: <script src="" async></script> -->
+
+<script type="text/x-mathjax-config">
+MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [ ['$','$'], ['\\(','\\)'] ],
+    processEscapes: true
+  }
+});
+</script>
+<script type="text/javascript" async
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+</head>
+<body>
+ 
+<!-- コンテンツを記述 -->
+ 
+<h1>Question on Rigid Rotor</h1>
+A rigid body with moment of inertia of $Iz$ rotates freely in the $x$-$y$ plane. let $\phi$ be the angle between the $x$-axis and the rotator axis.
+
+<h2>Question (a)</h2>
+Find the energy eigenvalues and the corresponding eigenfunctions.
+
+<h3>Answer</h3>
+Suppose $\mu$ is the reduced mass of the rotor in the center of mass reference frame and $r$ is the distance of them. We can say
+$$
+I = \mu r^2.
+$$
+
+Set the Hamiltonian $H$ such that
+$$
+\hat  H=-\frac{\hbar^{2}}{2\mu}\nabla^2.
+$$
+
+On spherical polar coortinate Laplacian $\nabla^2$ can be described by
+$$
+\nabla^2 f=\frac{1}{r^2}\frac{\partial}{\partial r}\left(r^2\frac {\partial f}{\partial r}\right)+\frac{1}{r^2\sin \theta }\frac{\partial }{\partial \theta }\left(\sin \theta \frac{\partial f}{\partial \theta }\right)+\frac{1}{r^2\sin^2\theta }\frac{\partial^2 f}{\partial \varphi^2}
+$$
+
+then
+$$
+\hat H=-\frac{\hbar^2}{2I}\left[\frac{1}{\sin \theta }\frac{\partial}{\partial \theta}\left(\sin \theta \frac{\partial}{\partial \theta}\right)+\frac{1}{\sin^2\theta}\frac{\partial^2}{\partial \varphi^2}\right].
+$$
+
+Solving the Schrödinger equation $\hat H \Psi =E\Psi$ looks somewhat difficult. However it's similar as the Hamiltnian of Hydrogen atom
+$$
+\hat H_{\mathrm{Hydrogen}} \psi = -{\frac {\hbar ^{2}}{2\mu }}\left[{\frac {1}{r^{2}}}{\frac {\partial }{\partial r}}\left(r^{2}{\frac {\partial \psi }{\partial r}}\right)+{\frac {1}{r^{2}\sin \theta }}{\frac {\partial }{\partial \theta }}\left(\sin \theta {\frac {\partial \psi }{\partial \theta }}\right)+{\frac {1}{r^{2}\sin ^{2}\theta }}{\frac {\partial ^{2}\psi }{\partial \phi ^{2}}}\right]-{\frac {e^{2}}{4\pi \epsilon _{0}r}} \psi
+$$
+
+We can casually say $\hat H$ is $r$-eliminated hamiltonian from Hydrogen atom. Hence we can find the eigenfunctions as <a href="https://brilliant.org/wiki/spherical-harmonics/" target="_blank">the spherical harmonics $Y_l^m(\theta, \varphi)$</a>
+$$
+\Psi = Y_l^m(\theta, \varphi)
+$$
+and the corresponding eigenenergies are
+$$
+E_l = \frac{\hbar^2}{2I}l(l+1)
+$$
+
+<div style="text-align:center">
+<strong>An demonstration of spherical harmonics on classical droplet by ChipmunKarto:</strong>
+</br>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/RPdKKlehv_E?rel=0&amp;start=30" frameborder="0" allowfullscreen></iframe>
+</div>
+
+<!-- スクリプトでブロッキングを起こすものはここに記述
+ブロッキングを起こす原因としては、CSSのセレクタ操作（IE）、負荷の高いDOM操作、多数のスクリプトなど -->
+<!-- SCRIPTS -->
+<!-- 例: <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script> -->
+</body>
+</html>
