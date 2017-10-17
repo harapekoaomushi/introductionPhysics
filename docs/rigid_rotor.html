@@ -57,7 +57,7 @@ MathJax.Hub.Config({
 });
 </script>
 <script type="text/javascript" async
-  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS_CHTML">
+  src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.2/MathJax.js?config=TeX-AMS_CHTML">
 </script>
 
 </head>
@@ -66,12 +66,13 @@ MathJax.Hub.Config({
 <!-- コンテンツを記述 -->
  
 <h1>Question on Rigid Rotor</h1>
+<h2>Problem 1</h2>
 A rigid body with moment of inertia of $Iz$ rotates freely in the $x$-$y$ plane. let $\phi$ be the angle between the $x$-axis and the rotator axis.
 
-<h2>Question (a)</h2>
+<h3>Question (a)</h3>
 Find the energy eigenvalues and the corresponding eigenfunctions.
 
-<h3>Answer</h3>
+<h3>Answer (a)</h3>
 Suppose $\mu$ is the reduced mass of the rotor in the center of mass reference frame and $r$ is the distance of them. We can say
 $$
 I = \mu r^2.
@@ -113,10 +114,10 @@ $$
 </div>
 
 
-<h2>Question (b)</h2>
+<h3>Question (b)</h3>
 At time $t$ equals zero, the rotator is described by a wave packet $\Psi(0) = A \sin ^2 \phi$. Find $\Psi(t)$ for $t > 0$.
 
-<h3>Answer</h3>
+<h3>Answer (b)</h3>
 To solve time-dependent Schrödinger equation $i\hbar \frac{\partial}{\partial t}\Psi(t)=\hat {H}\Psi (t)$ for time-dependent Hamiltonian $\hat{H}$, we get
 $$
 \Psi(t) = \Psi(0) e^{-iEt/ \hbar}.
@@ -125,6 +126,26 @@ Then the answer is
 $$
 \Psi(t) = A \sin^2 \phi\; e^{-iEt/ \hbar}.
 $$
+
+<hr>
+<h2>Problem 2</h2>
+A hydrogen atom is in a ${}^2\mathrm{P}_{1/2}$ state with total angular momentum up along the $z$-axis. In this problem, show your computations and reasoning carefully.
+
+<h3>Question (a)</h3>
+With what probability will the electron be found with spin down?
+
+<h3>Answer (a)</h3>
+The electron with spin down cannot be found along $z$-axis. Along $x$ and $y$-axes we can find it with 50%.
+
+<h3>Question (b)</h3>
+COmpute the probability per unit solid angle $P(\theta, \varphi)$ that the electron will be found at spherical angles $\theta, \varphi$ independent of radial distance and spin.
+
+<h3>Answer (b)</h3>
+The configuration is $n\mathrm{p}^1$ ($n \geq 2$). So the angle parts of the wave function is $Y_1^m(\theta, \varphi)$ ($m = 1, 0, -1$). Then
+$$
+P(\theta, \varphi) = Y_1^m(\theta, \varphi)^2 \;\;\;(m = 1, 0, -1)
+$$
+
 
 <div style="text-align:center">
 <a href="./">Back to home</a>
